@@ -1,0 +1,98 @@
+{
+  "project_info": {
+    "project_number": "743790368946",
+    "firebase_url": "https://university-e2dbf.firebaseio.com",
+    "project_id": "university-e2dbf",
+    "storage_bucket": "university-e2dbf.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:743790368946:android:4bd286575b0a342834d1ab",
+        "android_client_info": {
+          "package_name": "ru.ahoy.unik"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "743790368946-go111gafm1ptfemgc7kuicmbqorrrklp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCfAXgEmYsw6j1LrDD70pt5_4shFjyvAbI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "743790368946-go111gafm1ptfemgc7kuicmbqorrrklp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:743790368946:android:ba45c1bc5585824634d1ab",
+        "android_client_info": {
+          "package_name": "ru.ahoy.univer"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "743790368946-go111gafm1ptfemgc7kuicmbqorrrklp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCfAXgEmYsw6j1LrDD70pt5_4shFjyvAbI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "743790368946-go111gafm1ptfemgc7kuicmbqorrrklp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:743790368946:android:9e8a3bfd28d5b27334d1ab",
+        "android_client_info": {
+          "package_name": "ru.ahoy.university"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "743790368946-go111gafm1ptfemgc7kuicmbqorrrklp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCfAXgEmYsw6j1LrDD70pt5_4shFjyvAbI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "743790368946-go111gafm1ptfemgc7kuicmbqorrrklp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="container_sign_in">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginHorizontal">@dimen/login_margin_horizontal</item>
+        <item name="android:layout_marginTop">16dp</item>
+<!--        <item name="android:background">@drawable/shape_ed</item>-->
+        <item name="android:elevation">10dp</item>
+        <item name="android:orientation">horizontal</item>
+    </style>
+
+    <style name="sign_in_btn_continue">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:layout_alignParentBottom">true</item>
+        <item name="android:layout_marginVertical">16dp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">40dp</item>
+        <item name="android:layout_marginHorizontal">@dimen/login_margin_horizontal</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:background">@drawable/shape_btn_continue</item>
+    </style>
+
+    <style name="sign_in_text">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginHorizontal">@dimen/login_margin_horizontal</item>
+        <item name="android:layout_marginVertical">@dimen/login_margin_top</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="sign_in_btn_google_container">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">40dp</item>
+<!--        <item name="android:background">@drawable/shape_google_sign_in</item>-->
+        <item name="android:background">@drawable/ripple_button</item>
+        <item name="android:elevation">4dp</item>
+        <item name="android:layout_marginHorizontal">@dimen/login_margin_horizontal</item>
+        <item name="android:layout_marginTop">100dp</item>
+        <item name="android:orientation">horizontal</item>
+    </style>
+
+    <style name="app_edit_text_bold">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="text_style_small">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="text_style_normal_primary">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">?attr/colorPrimary</item>
+    </style>
+</resources>
