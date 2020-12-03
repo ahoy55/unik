@@ -1,13 +1,10 @@
-package ru.ahoy.unik.screens
+package ru.ahoy.uni.screens
 
 import android.os.Bundle
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
-import androidx.viewpager2.widget.ViewPager2
 import kotlinx.android.synthetic.main.fragment_switch_login.*
-import ru.ahoy.unik.R
-import ru.ahoy.unik.adapters.SwitchLoginAdapter
+import ru.ahoy.uni.R
+import ru.ahoy.uni.adapters.SwitchLoginAdapter
 
 class SwitchLoginFragment : BaseFragment(R.layout.fragment_switch_login) {
 

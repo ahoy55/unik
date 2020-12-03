@@ -1,4 +1,4 @@
-package ru.ahoy.unik
+package ru.ahoy.uni
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4

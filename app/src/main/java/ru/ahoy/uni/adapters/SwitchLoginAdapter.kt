@@ -1,10 +1,10 @@
-package ru.ahoy.unik.adapters
+package ru.ahoy.uni.adapters
 
 import androidx.fragment.app.Fragment
 import androidx.viewpager2.adapter.FragmentStateAdapter
-import ru.ahoy.unik.screens.LoginFragment
-import ru.ahoy.unik.screens.RegisterFragment
-import ru.ahoy.unik.screens.SwitchLoginFragment
+import ru.ahoy.uni.screens.LoginFragment
+import ru.ahoy.uni.screens.RegisterFragment
+import ru.ahoy.uni.screens.SwitchLoginFragment
 
 class SwitchLoginAdapter(private val fragment: SwitchLoginFragment) : FragmentStateAdapter(fragment) {
 

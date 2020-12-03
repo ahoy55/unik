@@ -110,18 +110,17 @@
                 style="@style/container_sign_in">
 
                 <ImageView
-                    android:id="@+id/reg_phone_icon"
+                    android:id="@+id/reg_email_icon"
                     android:layout_width="30dp"
                     android:layout_height="match_parent"
-                    android:src="@drawable/ic_register_phone"
+                    android:src="@drawable/ic_register_email"
                     android:contentDescription="@string/login_icon_description" />
 
                 <EditText
-                    android:id="@+id/reg_ed_phone"
-                    android:hint="@string/sign_in_phone"
+                    android:id="@+id/reg_ed_email"
+                    android:hint="@string/sign_in_email"
                     style="@style/app_edit_text_bold"
-                    android:inputType="phone"
-                    android:digits="0987654321+"
+                    android:inputType="textEmailAddress"
                     android:autofillHints=""
                     tools:ignore="TextFields" />
             </LinearLayout>

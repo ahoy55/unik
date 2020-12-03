@@ -1,16 +1,11 @@
-package ru.ahoy.unik
+package ru.ahoy.uni
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.os.PersistableBundle
-import android.widget.Switch
-import android.widget.Toast
-import androidx.fragment.app.Fragment
-import kotlinx.android.synthetic.main.activity_main.*
-import ru.ahoy.unik.databinding.ActivityMainBinding
-import ru.ahoy.unik.screens.LoginFragment
-import ru.ahoy.unik.screens.SwitchLoginFragment
+import ru.ahoy.uni.databinding.ActivityMainBinding
+import ru.ahoy.uni.screens.ScheduleActivity
+import ru.ahoy.uni.utils.*
 
 
 class MainActivity : AppCompatActivity() {
@@ -21,13 +16,27 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         mBinding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(mBinding.root)
+    }
 
-        if(isLogin) {
+    override fun onStart() {
+        super.onStart()
+        initFields()
+        initFunc()
+    }
 
-        }
-        else {
+    private fun initFields() {
+        initFirebase()
+    }
+
+    private fun initFunc() {
+        if (AUTH.currentUser != null) {
+            val intent = Intent(this, ScheduleActivity::class.java)
+            startActivity(intent)
+            this.finish()
+        } else {
             val intent = Intent(this, SignInActivity::class.java)
             startActivity(intent)
+            this.finish()
         }
     }
 }

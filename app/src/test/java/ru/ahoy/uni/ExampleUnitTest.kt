@@ -1,4 +1,4 @@
-package ru.ahoy.unik
+package ru.ahoy.uni
 
 import org.junit.Test
 

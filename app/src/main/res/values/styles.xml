@@ -19,7 +19,8 @@
         <item name="android:layout_height">40dp</item>
         <item name="android:layout_marginHorizontal">@dimen/login_margin_horizontal</item>
         <item name="android:textSize">14sp</item>
-        <item name="android:background">@drawable/shape_btn_continue</item>
+        <item name="android:background">@drawable/ripple_button</item>
+        <item name="backgroundTint">?attr/colorPrimary</item>
     </style>
 
     <style name="sign_in_text">
@@ -64,4 +65,14 @@
         <item name="android:textSize">14sp</item>
         <item name="android:textColor">?attr/colorPrimary</item>
     </style>
+
+    <style name="Theme.Transparent" parent="Theme.AppCompat.NoActionBar" >
+        <item name ="android:windowIsTranslucent">true</item>
+        <item name ="android:windowBackground">@android:color/transparent</item>
+        <item name ="android:windowContentOverlay">@null</item>
+        <item name ="windowNoTitle">true</item>
+        <item name ="android:windowIsFloating">true</item>
+        <item name ="android:backgroundDimEnabled">false</item>
+    </style>
+
 </resources>

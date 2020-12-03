@@ -1,13 +1,12 @@
-package ru.ahoy.unik
+package ru.ahoy.uni
 
-import android.content.Context
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
+import androidx.appcompat.app.AppCompatActivity
 import com.afollestad.materialdialogs.MaterialDialog
-import ru.ahoy.unik.databinding.ActivitySignInBinding
-import ru.ahoy.unik.screens.SwitchLoginFragment
-import kotlin.system.exitProcess
+import ru.ahoy.uni.databinding.ActivitySignInBinding
+import ru.ahoy.uni.screens.SwitchLoginFragment
+import ru.ahoy.uni.utils.confirmExit
+import ru.ahoy.uni.utils.initFirebase
 
 class SignInActivity() : AppCompatActivity() {
 
@@ -17,6 +16,8 @@ class SignInActivity() : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         mBinding = ActivitySignInBinding.inflate(layoutInflater)
         setContentView(mBinding.root)
+        initFirebase()
+
     }
 
     override fun onStart() {
@@ -28,16 +29,6 @@ class SignInActivity() : AppCompatActivity() {
     }
 
     override fun onBackPressed() {
-        val dialog = MaterialDialog(this)
-            .title(text = "Выход")
-            .message(text = "Нажмите ОК, чтобы выйти")
-        dialog.show {
-            positiveButton (text = "OK") {
-                finishAffinity()
-            }
-            negativeButton (text = "Отмена") {
-                dialog.cancel()
-            }
-        }
+        confirmExit()
     }
 }

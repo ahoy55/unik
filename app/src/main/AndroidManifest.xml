@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="ru.ahoy.unik">
+    package="ru.ahoy.uni">
+
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
 
     <application
         android:allowBackup="true"
@@ -9,11 +12,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Unik">
-        <activity
-            android:name=".SignInActivity"
+        <activity android:name="ru.ahoy.uni.screens.ScheduleActivity"
             android:screenOrientation="portrait"
-             />
-        <activity android:name=".MainActivity">
+            />
+        <activity android:name="ru.ahoy.uni.utils.GoogleSignInHelper"
+            android:theme="@style/Theme.Transparent"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name="ru.ahoy.uni.SignInActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name="ru.ahoy.uni.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

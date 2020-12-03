@@ -111,17 +111,17 @@
                 style="@style/container_sign_in">
 
                 <ImageView
-                    android:id="@+id/login_profile_icon"
+                    android:id="@+id/login_email_icon"
                     android:layout_width="30dp"
                     android:layout_height="match_parent"
-                    android:src="@drawable/ic_login_icon"
+                    android:src="@drawable/ic_register_email"
                 android:contentDescription="@string/login_icon_description" />
 
                 <EditText
                     android:id="@+id/login_ed_login"
-                    android:hint="@string/sign_in_username"
+                    android:hint="@string/sign_in_email"
                     style="@style/app_edit_text_bold"
-                    android:inputType="textFilter"
+                    android:inputType="textEmailAddress"
                     android:autofillHints="" />
             </LinearLayout>
 
@@ -187,7 +187,7 @@
 
 
         <Button
-            android:id="@+id/login_btn_login"
+            android:id="@+id/login_btn_continue"
             android:text="@string/sign_in_btn_continue"
             style="@style/sign_in_btn_continue" />
 
