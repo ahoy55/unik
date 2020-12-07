@@ -10,6 +10,7 @@ import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import kotlinx.android.synthetic.main.activity_schedule.*
+import kotlinx.android.synthetic.main.fragment_empty_schedule.*
 import ru.ahoy.uni.R
 import ru.ahoy.uni.SignInActivity
 import ru.ahoy.uni.databinding.ActivityScheduleBinding
@@ -52,6 +53,11 @@ class ScheduleActivity : AppCompatActivity() {
         mLiveData.observe(this, Observer {
             if(it == Status.SUCCESS) {
                 if(USER.schedule_id.isEmpty()) {
+                    supportFragmentManager.beginTransaction()
+                        .replace(R.id.schedule_container, EmptyScheduleFragment(subjectsLiveData))
+                        .commit()
+                }
+                else {
                     supportFragmentManager.beginTransaction()
                         .replace(R.id.schedule_container, EmptyScheduleFragment(subjectsLiveData))
                         .commit()

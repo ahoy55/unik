@@ -1,9 +1,11 @@
 package ru.ahoy.uni.screens
 
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.EditText
 import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.fragment_day.*
 import ru.ahoy.uni.R
@@ -49,5 +51,11 @@ class DayFragment(
             }
         }
         subjectsLiveData.value = subjectsList
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        Log.d("DayFragment", "onDestroy")
+        if(subjectsLiveData.hasObservers()) subjectsLiveData.removeObservers(this.viewLifecycleOwner)
     }
 }
