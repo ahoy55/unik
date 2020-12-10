@@ -1,4 +1,4 @@
-package ru.ahoy.uni.utils
+package ru.ahoy.uni.listeners
 
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError

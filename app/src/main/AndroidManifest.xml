@@ -12,14 +12,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Unik">
-        <activity android:name="ru.ahoy.uni.screens.ScheduleActivity"
+        <activity android:name="ru.ahoy.uni.screens.activities.ScheduleActivity"
             android:screenOrientation="portrait"
             />
-        <activity android:name="ru.ahoy.uni.utils.GoogleSignInHelper"
+        <activity android:name="ru.ahoy.uni.utils.GoogleAuth"
             android:theme="@style/Theme.Transparent"
             android:screenOrientation="portrait"/>
         <activity
-            android:name="ru.ahoy.uni.SignInActivity"
+            android:name="ru.ahoy.uni.screens.activities.SignInActivity"
             android:screenOrientation="portrait" />
         <activity android:name="ru.ahoy.uni.MainActivity">
             <intent-filter>

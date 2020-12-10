@@ -1,16 +1,18 @@
 package ru.ahoy.uni
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import ru.ahoy.uni.databinding.ActivityMainBinding
-import ru.ahoy.uni.screens.ScheduleActivity
-import ru.ahoy.uni.utils.*
+import ru.ahoy.uni.screens.activities.ScheduleActivity
+import ru.ahoy.uni.screens.activities.SignInActivity
+import ru.ahoy.uni.utils.AUTH
+import ru.ahoy.uni.utils.initFirebase
+import ru.ahoy.uni.utils.replaceActivity
 
 
 class MainActivity : AppCompatActivity() {
     private lateinit var mBinding: ActivityMainBinding
-    private val isLogin = false;
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,13 +32,8 @@ class MainActivity : AppCompatActivity() {
 
     private fun initFunc() {
         if (AUTH.currentUser != null) {
-            val intent = Intent(this, ScheduleActivity::class.java)
-            startActivity(intent)
-            this.finish()
-        } else {
-            val intent = Intent(this, SignInActivity::class.java)
-            startActivity(intent)
-            this.finish()
-        }
+            replaceActivity(ScheduleActivity())
+        } else replaceActivity(SignInActivity())
+        finish()
     }
 }

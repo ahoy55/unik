@@ -4,16 +4,26 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".screens.ScheduleActivity">
+    tools:context=".screens.activities.ScheduleActivity">
 
+    <View
+        android:id="@+id/status_bar"
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:background="@color/white"
+        app:layout_constraintTop_toTopOf="parent"/>
     <androidx.appcompat.widget.Toolbar
+        app:title="Расписание"
+        app:titleMarginStart="32dp"
         android:id="@+id/schedule_toolbar"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:background="@color/white"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/status_bar"
         app:layout_constraintStart_toStartOf="parent"
-        />
+        >
+
+    </androidx.appcompat.widget.Toolbar>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/schedule_container"

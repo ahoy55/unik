@@ -1,4 +1,7 @@
 package ru.ahoy.uni.models
 
-class Schedule {
-}
+data class Schedule(
+    val subjects: List<Subject> = listOf(),
+    val creator_id: String = "",
+    val date_create: String = ""
+)

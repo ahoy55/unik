@@ -10,7 +10,7 @@ import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.RecyclerView
-import kotlinx.android.synthetic.main.rw_item.view.*
+import kotlinx.android.synthetic.main.rv_item_add.view.*
 import ru.ahoy.uni.R
 import ru.ahoy.uni.models.Subject
 
@@ -19,8 +19,9 @@ class AddDayRecyclerViewAdapter(
     private var day: Int,
     private var context: LifecycleOwner
 ) : RecyclerView.Adapter<AddDayRecyclerViewAdapter.MyViewHolder>() {
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
-        val itemView = LayoutInflater.from(parent.context).inflate(R.layout.rw_item, parent, false)
+        val itemView = LayoutInflater.from(parent.context).inflate(R.layout.rv_item_add, parent, false)
         return MyViewHolder(itemView)
     }
 

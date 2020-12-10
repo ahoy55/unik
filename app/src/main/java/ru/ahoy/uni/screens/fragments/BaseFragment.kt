@@ -1,4 +1,4 @@
-package ru.ahoy.uni.screens
+package ru.ahoy.uni.screens.fragments
 
 import androidx.fragment.app.Fragment
 

@@ -5,3 +5,4 @@ data class Subject (
     val day: Int = 0,
     val number: Int = 0
 )
+

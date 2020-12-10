@@ -1,27 +1,15 @@
-package ru.ahoy.uni.screens
+package ru.ahoy.uni.screens.fragments.auth
 
-import android.content.Intent
-import android.util.Log
-import com.google.android.gms.auth.api.Auth
-import com.google.android.gms.auth.api.signin.GoogleSignIn
-import com.google.android.gms.auth.api.signin.GoogleSignInClient
-import com.google.android.gms.auth.api.signin.GoogleSignInOptions
-import com.google.android.gms.auth.api.signin.GoogleSignInResult
-import com.google.firebase.auth.AuthCredential
-import com.google.firebase.auth.GoogleAuthProvider
 import kotlinx.android.synthetic.main.fragment_login.*
 import ru.ahoy.uni.R
 import ru.ahoy.uni.listeners.OnFocusListener
-import ru.ahoy.uni.utils.AUTH
-import ru.ahoy.uni.utils.GoogleSignInHelper
-import ru.ahoy.uni.utils.showToast
+import ru.ahoy.uni.screens.fragments.BaseFragment
+import ru.ahoy.uni.utils.GoogleAuth
+import ru.ahoy.uni.utils.firebaseAuth
+import ru.ahoy.uni.utils.replaceActivity
 
 class LoginFragment(private var fragment: SwitchLoginFragment) :
     BaseFragment(R.layout.fragment_login) {
-
-    private lateinit var mPassword: String
-    private lateinit var mName: String
-    private lateinit var mEmail: String
 
     override fun onStart() {
         super.onStart()
@@ -38,33 +26,14 @@ class LoginFragment(private var fragment: SwitchLoginFragment) :
         }
 
         login_btn_continue.setOnClickListener {
-            firebaseAuth()
+            firebaseAuth(
+                login_ed_login?.text.toString(),
+                login_ed_password?.text.toString()
+            )
         }
 
         login_btn_login_google.setOnClickListener {
-            val intent = Intent(this.context, GoogleSignInHelper::class.java)
-            startActivity(intent)
-//            this.activity?.finish()
+            replaceActivity(GoogleAuth())
         }
     }
-
-    private fun firebaseAuth() {
-        mEmail = login_ed_login.text.toString()
-        mPassword = login_ed_password.text.toString()
-
-        if (mEmail.isEmpty() || mPassword.isEmpty()) {
-            showToast("Email и пароль не могут быть пустыми")
-        } else {
-            AUTH.signInWithEmailAndPassword(mEmail, mPassword)
-                .addOnCompleteListener {
-                    if (it.isSuccessful) {
-                        showToast("Successful")
-                        val intent = Intent(this.context, ScheduleActivity::class.java)
-                        startActivity(intent)
-                        this.activity?.finish()
-                    } else showToast(it.exception?.message.toString())
-                }
-        }
-    }
-
 }

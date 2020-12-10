@@ -1,4 +1,4 @@
-package ru.ahoy.uni.screens
+package ru.ahoy.uni.screens.fragments.auth
 
 import android.content.Intent
 import android.os.Bundle
@@ -6,6 +6,8 @@ import android.view.View
 import kotlinx.android.synthetic.main.fragment_register.*
 import ru.ahoy.uni.R
 import ru.ahoy.uni.listeners.OnFocusListener
+import ru.ahoy.uni.screens.activities.ScheduleActivity
+import ru.ahoy.uni.screens.fragments.BaseFragment
 import ru.ahoy.uni.utils.*
 
 

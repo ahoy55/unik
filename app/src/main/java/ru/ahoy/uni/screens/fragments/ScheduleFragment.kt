@@ -1,60 +1,70 @@
-package ru.ahoy.uni.screens
+package ru.ahoy.uni.screens.fragments
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
+import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.Observer
+import androidx.viewpager2.widget.ViewPager2
+import com.google.android.material.tabs.TabLayout
+import com.google.android.material.tabs.TabLayoutMediator
+import com.google.android.material.tabs.TabLayoutMediator.TabConfigurationStrategy
+import kotlinx.android.synthetic.main.fragment_schedule.*
 import ru.ahoy.uni.R
+import ru.ahoy.uni.adapters.ScheduleFragmentAdapter
+import ru.ahoy.uni.listeners.AppValueEventListener
+import ru.ahoy.uni.models.Schedule
+import ru.ahoy.uni.models.Subject
+import ru.ahoy.uni.utils.NODE_SCHEDULES
+import ru.ahoy.uni.utils.REF_DATABASE_ROOT
+import ru.ahoy.uni.utils.Status
+import ru.ahoy.uni.utils.USER
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
+class ScheduleFragment : BaseFragment(R.layout.fragment_schedule) {
 
-/**
- * A simple [Fragment] subclass.
- * Use the [ScheduleFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
-class ScheduleFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
+    private lateinit var statusLiveData: MutableLiveData<Status>
+    private lateinit var subjectsLiveData: MutableLiveData<MutableSet<Subject>>
+    private lateinit var viewPager: ViewPager2
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        statusLiveData = MutableLiveData()
+        subjectsLiveData = MutableLiveData()
+
+        REF_DATABASE_ROOT.child(NODE_SCHEDULES).child(USER.schedule_id)
+            .addListenerForSingleValueEvent(AppValueEventListener {
+                statusLiveData.value = Status.SUCCESS
+                subjectsLiveData.value = it.getValue(Schedule::class.java)?.subjects?.toMutableSet()
+            })
+
+        viewPager = schedule_fragment_vp
+        viewPager.offscreenPageLimit = 7
     }
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_schedule, container, false)
-    }
+    override fun onStart() {
+        super.onStart()
+        statusLiveData.observe(this, Observer {
+            if (statusLiveData.value == Status.SUCCESS) {
+                viewPager.adapter = ScheduleFragmentAdapter(this, subjectsLiveData)
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment ScheduleFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            ScheduleFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
+                TabLayoutMediator(
+                    schedule_fragment_tl,
+                    viewPager,
+                    TabConfigurationStrategy { tab: TabLayout.Tab, i: Int ->
+                        tab.text = when (i) {
+                            0 -> "ПН"
+                            1 -> "ВТ"
+                            2 -> "СР"
+                            3 -> "ЧТ"
+                            4 -> "ПТ"
+                            5 -> "СБ"
+                            6 -> "ВС"
+                            else -> "День недели"
+                        }
+                    }).attach()
             }
+        })
     }
+
+
 }

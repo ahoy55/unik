@@ -1,8 +1,7 @@
-package ru.ahoy.uni.screens
+package ru.ahoy.uni.screens.fragments
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import androidx.lifecycle.MutableLiveData
 import androidx.viewpager2.widget.ViewPager2
@@ -12,6 +11,7 @@ import ru.ahoy.uni.R
 import ru.ahoy.uni.adapters.ScheduleAdapter
 import ru.ahoy.uni.models.Schedule
 import ru.ahoy.uni.models.Subject
+import ru.ahoy.uni.screens.activities.ScheduleActivity
 import ru.ahoy.uni.utils.*
 import java.util.*
 

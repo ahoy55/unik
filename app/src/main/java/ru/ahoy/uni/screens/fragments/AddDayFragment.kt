@@ -1,22 +1,21 @@
-package ru.ahoy.uni.screens
+package ru.ahoy.uni.screens.fragments
 
 import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.EditText
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
-import kotlinx.android.synthetic.main.fragment_day.*
+import kotlinx.android.synthetic.main.fragment_add_day.*
 import ru.ahoy.uni.R
 import ru.ahoy.uni.adapters.AddDayRecyclerViewAdapter
 import ru.ahoy.uni.models.Subject
 
 
-class DayFragment(
+class AddDayFragment(
     private val pos: Int,
     private var subjectsLiveData: MutableLiveData<MutableSet<Subject>>
-) : BaseFragment(R.layout.fragment_day) {
+) : BaseFragment(R.layout.fragment_add_day) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 
@@ -51,11 +50,5 @@ class DayFragment(
             }
         }
         subjectsLiveData.value = subjectsList
-    }
-
-    override fun onDestroy() {
-        super.onDestroy()
-        Log.d("DayFragment", "onDestroy")
-        if(subjectsLiveData.hasObservers()) subjectsLiveData.removeObservers(this.viewLifecycleOwner)
     }
 }

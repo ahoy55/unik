@@ -1,12 +1,13 @@
-package ru.ahoy.uni
+package ru.ahoy.uni.screens.activities
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.afollestad.materialdialogs.MaterialDialog
+import ru.ahoy.uni.R
 import ru.ahoy.uni.databinding.ActivitySignInBinding
-import ru.ahoy.uni.screens.SwitchLoginFragment
+import ru.ahoy.uni.screens.fragments.auth.SwitchLoginFragment
 import ru.ahoy.uni.utils.confirmExit
 import ru.ahoy.uni.utils.initFirebase
+import ru.ahoy.uni.utils.replaceFragment
 
 class SignInActivity() : AppCompatActivity() {
 
@@ -16,16 +17,14 @@ class SignInActivity() : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         mBinding = ActivitySignInBinding.inflate(layoutInflater)
         setContentView(mBinding.root)
-        initFirebase()
 
+        initFirebase()
     }
 
     override fun onStart() {
         super.onStart()
 
-        supportFragmentManager.beginTransaction()
-            .replace(R.id.container_sign_in, SwitchLoginFragment())
-            .commit()
+        replaceFragment(R.id.container_sign_in, SwitchLoginFragment())
     }
 
     override fun onBackPressed() {
