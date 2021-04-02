@@ -14,16 +14,13 @@ class ScheduleFragmentAdapter(
     override fun getItemCount(): Int = 7
 
     override fun createFragment(position: Int): Fragment {
-        return if (subjectsLiveData.value!!.isEmpty()) {
-            DayOffFragment()
-        } else {
-            val subjects: MutableSet<Subject> = mutableSetOf()
-            for (s in subjectsLiveData.value!!) {
-                if (s.day == position) {
-                    subjects.add(s)
-                }
+        val subjects: MutableSet<Subject> = mutableSetOf()
+        for (s in subjectsLiveData.value!!) {
+            if (s.day == position) {
+                subjects.add(s)
             }
-            DayFragment(position, subjects)
         }
+        return if(subjects.isNotEmpty()) DayFragment(position, subjects)
+        else DayOffFragment()
     }
 }

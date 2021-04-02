@@ -18,7 +18,7 @@ class DayFragment(private val day: Int, private val subjects: MutableSet<Subject
         super.onViewCreated(view, savedInstanceState)
 
         recyclerView = day_fragment_rv
-        recyclerView.adapter = DayRecyclerViewAdapter(day, subjects)
+        recyclerView.adapter = DayRecyclerViewAdapter(day, subjects, recyclerView, requireContext())
         recyclerView.layoutManager = LinearLayoutManager(this.context)
 
     }

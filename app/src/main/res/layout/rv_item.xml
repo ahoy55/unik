@@ -4,7 +4,6 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginTop="5dp"
-    android:background="@drawable/background_subject_item"
     android:clickable="true"
     android:focusable="true">
 
@@ -24,7 +23,7 @@
 
 
         <TextView
-            android:id="@+id/tv_number"
+            android:id="@+id/tv_time"
             style="@style/style_divider_text"
             android:text="9:00 - 10:30"
             android:textColor="?attr/colorSecondary"
@@ -47,10 +46,11 @@
         android:id="@+id/title_container"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@drawable/background_subject_item"
         app:layout_constraintTop_toBottomOf="@id/divider_container">
 
         <TextView
-            android:id="@+id/tv_subtitle"
+            android:id="@+id/tv_char_title"
             android:layout_width="32dp"
             android:layout_height="32dp"
             android:layout_marginStart="16dp"
@@ -64,21 +64,35 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/tv_name"
+            android:id="@+id/tv_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:text="Pharmacology"
-            android:textSize="16sp"
+            android:textSize="18sp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toEndOf="@id/tv_subtitle"
+            app:layout_constraintStart_toEndOf="@id/tv_char_title"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <ImageView
+        <TextView
+            android:id="@+id/tv_free_time"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="16dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:textColor="?attr/colorSecondary"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:text="Свободное время" />
+
+        <ImageView
+            android:id="@+id/btn_arrow"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
             android:src="@drawable/ic_arrow_down"
+            android:background="@drawable/ripple_arrow_down"
+            android:padding="10dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -86,7 +100,7 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
 
-        android:id="@+id/expanded_view"
+        android:id="@+id/details"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:paddingBottom="8dp"

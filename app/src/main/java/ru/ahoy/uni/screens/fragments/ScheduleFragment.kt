@@ -14,10 +14,8 @@ import ru.ahoy.uni.adapters.ScheduleFragmentAdapter
 import ru.ahoy.uni.listeners.AppValueEventListener
 import ru.ahoy.uni.models.Schedule
 import ru.ahoy.uni.models.Subject
-import ru.ahoy.uni.utils.NODE_SCHEDULES
-import ru.ahoy.uni.utils.REF_DATABASE_ROOT
-import ru.ahoy.uni.utils.Status
-import ru.ahoy.uni.utils.USER
+import ru.ahoy.uni.utils.*
+import java.util.*
 
 class ScheduleFragment : BaseFragment(R.layout.fragment_schedule) {
 
@@ -39,6 +37,8 @@ class ScheduleFragment : BaseFragment(R.layout.fragment_schedule) {
 
         viewPager = schedule_fragment_vp
         viewPager.offscreenPageLimit = 7
+
+
     }
 
     override fun onStart() {
@@ -62,6 +62,7 @@ class ScheduleFragment : BaseFragment(R.layout.fragment_schedule) {
                             else -> "День недели"
                         }
                     }).attach()
+                viewPager.currentItem = Calendar.getInstance().get(Calendar.DAY_OF_WEEK) - 2
             }
         })
     }
