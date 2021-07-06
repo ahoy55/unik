@@ -19,7 +19,8 @@
         <item name="android:layout_height">40dp</item>
         <item name="android:layout_marginHorizontal">@dimen/login_margin_horizontal</item>
         <item name="android:textSize">14sp</item>
-        <item name="android:background">@drawable/shape_btn_continue</item>
+        <item name="android:background">@drawable/ripple_button</item>
+        <item name="backgroundTint">?attr/colorPrimary</item>
     </style>
 
     <style name="sign_in_text">
@@ -64,4 +65,33 @@
         <item name="android:textSize">14sp</item>
         <item name="android:textColor">?attr/colorPrimary</item>
     </style>
+
+    <style name="Theme.Transparent" parent="Theme.AppCompat.NoActionBar" >
+        <item name ="android:windowIsTranslucent">true</item>
+        <item name ="android:windowBackground">@android:color/transparent</item>
+        <item name ="android:windowContentOverlay">@null</item>
+        <item name ="windowNoTitle">true</item>
+        <item name ="android:windowIsFloating">true</item>
+        <item name ="android:backgroundDimEnabled">false</item>
+    </style>
+
+    <style name="style_divider_left">
+        <item name="android:layout_width">150dp</item>
+        <item name="android:background">@color/black</item>
+        <item name="android:layout_height">0.5dp</item>
+    </style>
+
+    <style name="style_divider_text">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="style_divider_right">
+        <item name="android:layout_width">150dp</item>
+        <item name="android:background">@color/black</item>
+        <item name="android:layout_height">0.5dp</item>
+    </style>
+
 </resources>

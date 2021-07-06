@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:fillViewport="true"
-    tools:context=".screens.fragments.auth.RegisterFragment">
+    tools:context=".screens.fragments.auth.LoginFragment">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -18,7 +18,7 @@
             >
 
             <TextView
-                android:text="@string/registry_to_appname"
+                android:text="@string/login_to_appname"
                 app:layout_constraintBottom_toTopOf="@id/login_btn_login_google"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
@@ -31,7 +31,8 @@
                 app:layout_constraintTop_toTopOf="parent"
                 android:clickable="true"
                 android:focusable="true"
-                style="@style/sign_in_btn_google_container">
+                style="@style/sign_in_btn_google_container"
+                >
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -70,24 +71,19 @@
                     android:id="@+id/login_divider_first"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    android:layout_width="150dp"
-                    android:background="@color/teal_200"
                     app:layout_constraintEnd_toEndOf="@id/tv_or"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    android:layout_height="0.5dp" />
+                    style="@style/style_divider_left" />
 
 
                 <TextView
                     android:id="@+id/tv_or"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
                     android:text="OR"
-                    android:textSize="18sp"
-                    android:textColor="@color/black"
                     app:layout_constraintEnd_toStartOf="@+id/login_divider_second"
                     app:layout_constraintStart_toEndOf="@+id/login_divider_first"
                     app:layout_constraintTop_toTopOf="parent"
-                    tools:ignore="HardcodedText" />
+                    tools:ignore="HardcodedText"
+                    style="@style/style_divider_text" />
 
 
                 <View
@@ -95,59 +91,35 @@
                     app:layout_constraintStart_toStartOf="@id/tv_or"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    android:layout_width="150dp"
-                    android:background="@color/teal_200"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    android:layout_height="0.5dp" />
+                    style="@style/style_divider_right" />
 
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <LinearLayout
-                android:id="@+id/reg_ed_phone_container"
+                android:id="@+id/login_ed_login_container"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/login_divider"
                 style="@style/container_sign_in">
 
                 <ImageView
-                    android:id="@+id/reg_email_icon"
+                    android:id="@+id/login_email_icon"
                     android:layout_width="30dp"
                     android:layout_height="match_parent"
                     android:src="@drawable/ic_register_email"
-                    android:contentDescription="@string/login_icon_description" />
+                android:contentDescription="@string/login_icon_description" />
 
                 <EditText
-                    android:id="@+id/reg_ed_email"
+                    android:id="@+id/login_ed_login"
                     android:hint="@string/sign_in_email"
                     style="@style/app_edit_text_bold"
                     android:inputType="textEmailAddress"
-                    android:autofillHints=""
-                    tools:ignore="TextFields" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/reg_ed_login_container"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/reg_ed_phone_container"
-                style="@style/container_sign_in">
-
-                <ImageView
-                    android:id="@+id/reg_profile_icon"
-                    android:layout_width="30dp"
-                    android:layout_height="match_parent"
-                    android:src="@drawable/ic_login_icon"
-                    android:contentDescription="@string/login_icon_description" />
-
-                <EditText
-                    android:id="@+id/reg_ed_login"
-                    android:hint="@string/sign_in_username"
-                    style="@style/app_edit_text_bold"
-                    android:inputType="textFilter"
                     android:autofillHints="" />
             </LinearLayout>
 
             <LinearLayout
-                android:id="@+id/reg_ed_password_container"
+                android:id="@+id/login_ed_password_container"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/login_margin_top"
@@ -155,10 +127,10 @@
                 android:elevation="10dp"
                 android:orientation="horizontal"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/reg_ed_login_container">
+                app:layout_constraintTop_toBottomOf="@id/login_ed_login_container">
 
                 <ImageView
-                    android:id="@+id/reg_password_icon"
+                    android:id="@+id/login_password_icon"
                     android:layout_width="30dp"
                     android:layout_height="match_parent"
                     android:src="@drawable/ic_password_icon"
@@ -167,7 +139,7 @@
 
                 <EditText
                     style="@style/app_edit_text_bold"
-                    android:id="@+id/reg_ed_password"
+                    android:id="@+id/login_ed_password"
                     android:inputType="textPassword"
                     android:hint="@string/sign_in_password"
                     android:autofillHints="" />
@@ -179,7 +151,7 @@
                 android:orientation="horizontal"
                 android:layout_marginTop="16dp"
                 android:layout_marginHorizontal="@dimen/login_margin_horizontal"
-                app:layout_constraintTop_toBottomOf="@id/reg_ed_password_container"
+                app:layout_constraintTop_toBottomOf="@id/login_ed_password_container"
 
                 >
 
@@ -187,16 +159,20 @@
                     android:id="@+id/tv_not_acc"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    android:text="@string/sign_in_have_acc"
+                    android:text="@string/sign_in_not_acc"
                     style="@style/text_style_small" />
                 <TextView
-                    android:id="@+id/reg_tv_login"
+                    android:id="@+id/login_tv_registry"
                     app:layout_constraintTop_toTopOf="parent"
-                    android:layout_marginHorizontal="5dp"
                     app:layout_constraintStart_toEndOf="@id/tv_not_acc"
-                    android:text="@string/sign_in_signup"
+                    android:text="@string/sign_in_registry"
+                    android:layout_marginHorizontal="5dp"
                     style="@style/text_style_normal_primary" />
-
+                <TextView
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    style="@style/text_style_normal_primary"
+                    android:text="@string/sign_in_forgot_password" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -204,7 +180,7 @@
 
 
         <Button
-            android:id="@+id/register_btn_register"
+            android:id="@+id/login_btn_continue"
             android:text="@string/sign_in_btn_continue"
             style="@style/sign_in_btn_continue" />
 

@@ -1,92 +1,85 @@
 {
   "project_info": {
-    "project_number": "743790368946",
-    "firebase_url": "https://university-e2dbf.firebaseio.com",
-    "project_id": "university-e2dbf",
-    "storage_bucket": "university-e2dbf.appspot.com"
+    "project_number": "772868255924",
+    "firebase_url": "https://unik55.firebaseio.com",
+    "project_id": "unik55",
+    "storage_bucket": "unik55.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:743790368946:android:4bd286575b0a342834d1ab",
+        "mobilesdk_app_id": "1:772868255924:android:88d9d4f8e0beea769e67e1",
+        "android_client_info": {
+          "package_name": "ru.ahoy.uni"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "772868255924-9h04dju9oqbulk4g540eq7j76qcmvrfu.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "ru.ahoy.uni",
+            "certificate_hash": "f96eedd37f18312102869c9e1885baaf30bdc4ca"
+          }
+        },
+        {
+          "client_id": "772868255924-9m917ooo4fvdpmii3k97fjh9rou9vlds.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAB0MlVCxuBtEIxnSHXW0HhbNr5-ujcMnE"
+        },
+        {
+          "current_key": "AIzaSyBdThk2kSy7WdzS8bDjszFZy9Wl-39jcbw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "772868255924-9m917ooo4fvdpmii3k97fjh9rou9vlds.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:772868255924:android:6aca54eaf1e26c8c9e67e1",
         "android_client_info": {
           "package_name": "ru.ahoy.unik"
         }
       },
       "oauth_client": [
         {
-          "client_id": "743790368946-go111gafm1ptfemgc7kuicmbqorrrklp.apps.googleusercontent.com",
+          "client_id": "772868255924-j03ab3f9k4a0clnelpcv36r2lgkhb7k5.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "ru.ahoy.unik",
+            "certificate_hash": "f96eedd37f18312102869c9e1885baaf30bdc4ca"
+          }
+        },
+        {
+          "client_id": "772868255924-9m917ooo4fvdpmii3k97fjh9rou9vlds.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyCfAXgEmYsw6j1LrDD70pt5_4shFjyvAbI"
+          "current_key": "AIzaSyAB0MlVCxuBtEIxnSHXW0HhbNr5-ujcMnE"
+        },
+        {
+          "current_key": "AIzaSyBdThk2kSy7WdzS8bDjszFZy9Wl-39jcbw"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "743790368946-go111gafm1ptfemgc7kuicmbqorrrklp.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:743790368946:android:ba45c1bc5585824634d1ab",
-        "android_client_info": {
-          "package_name": "ru.ahoy.univer"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "743790368946-go111gafm1ptfemgc7kuicmbqorrrklp.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyCfAXgEmYsw6j1LrDD70pt5_4shFjyvAbI"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "743790368946-go111gafm1ptfemgc7kuicmbqorrrklp.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:743790368946:android:9e8a3bfd28d5b27334d1ab",
-        "android_client_info": {
-          "package_name": "ru.ahoy.university"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "743790368946-go111gafm1ptfemgc7kuicmbqorrrklp.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyCfAXgEmYsw6j1LrDD70pt5_4shFjyvAbI"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "743790368946-go111gafm1ptfemgc7kuicmbqorrrklp.apps.googleusercontent.com",
+              "client_id": "772868255924-9m917ooo4fvdpmii3k97fjh9rou9vlds.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

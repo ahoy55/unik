@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name">unik</string>
+    <!--    <string name="web_client_id">743790368946-go111gafm1ptfemgc7kuicmbqorrrklp.apps.googleusercontent.com</string>-->
+    <string name="web_client_id">772868255924-9m917ooo4fvdpmii3k97fjh9rou9vlds.apps.googleusercontent.com</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="login_icon_description">login_icon</string>
     <string name="sign_in_forgot_password">Забыл пароль</string>
@@ -15,4 +17,5 @@
     <string name="sign_in_signup"> Войти</string>
     <string name="sign_in_have_acc">Зарегистрированы?</string>
     <string name="sign_in_phone">Телефон</string>
+    <string name="sign_in_email">Email</string>
 </resources>
